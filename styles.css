@@ -2,11 +2,11 @@ body{
 /*     background: linear-gradient(to bottom, #ffffff 0%, #ff4500 100%);
  */    
     background-repeat: no-repeat;
-    background-color: #f16023;
+    background-color: #ffffff;
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
-    font-family: 'Roboto', sans-serif;
+    font-family: Nova, monospace;
     font-size: 15px;
     margin: 0;
     padding: 0;
@@ -33,7 +33,7 @@ body{
     height: 100%;
     margin: 0%;
     padding: 0%;
-    background-color: #ffffff;
+    background-color: #f16023;
   }
   
   .elements{
@@ -44,11 +44,7 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #ffffff;
-    /* add blur to the element */
-    backdrop-filter: blur(10px);
-    /* shadow */
-    box-shadow: 0 0 10px 0 #000000;
+    background-color: #f16023;
     border-radius: 8px;
     margin-top: 2px;
     margin-bottom: 2%;
