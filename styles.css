@@ -101,3 +101,28 @@ body {
 .black_text {
     color: black;
 }
+
+
+
+
+
+
+
+/* ===== Scrollbar CSS ===== */
+* {
+    scrollbar-width: auto;
+    scrollbar-color:  var(--primary-color) #8f54a000;
+  }
+  
+  *::-webkit-scrollbar {
+    width: 12px;
+  }
+  
+  *::-webkit-scrollbar-track {
+    background: #ffb889;
+  }
+  
+  *::-webkit-scrollbar-thumb {
+    background-color: var(--primary-color);
+    border-radius: 10px;
+  }
