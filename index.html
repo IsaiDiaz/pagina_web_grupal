@@ -4,9 +4,129 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Numb - LDR</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="https://static.vecteezy.com/system/resources/thumbnails/012/957/173/small/social-media-icon-of-music-and-video-outline-logos-website-button-colorful-transparent-illustration-free-png.png" type="image/png">
+    <script src="http://cdn.rawgit.com/Mikhus/canvas-gauges/gh-pages/download/2.1.7/all/gauge.min.js"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 </head>
 <body>
+    <div class="navbar">
+        <div class="contnav">
+            <img src="https://secrad.lpz.ucb.edu.bo/wp-content/uploads/2019/05/logo1-e1617112271575.png" alt="UCB-LOGO" width="250">
+        </div>
+    </div>
     
+    <div class="info">
+        <div class="elements">
+            <img src="https://static.vecteezy.com/system/resources/thumbnails/012/957/173/small/social-media-icon-of-music-and-video-outline-logos-website-button-colorful-transparent-illustration-free-png.png" alt="UCB-LOGO" width="80">
+            <h2>Numb</h2> 
+        </div>
+        <div class="elements">
+            <h1>Numb Music</h1>
+        </div>
+        <div class="elements">
+            <div class="c">
+                <div class="weather">
+                    <p class="temp"></p>
+                    <p class="desc"></p>
+                </div>
+                <div class="time">
+                    <p class="date"></p>
+                    <p class="clock"></p>
+                </div>
+            </div>
+        </div>
+        <div class="elements">
+            %rssicon%
+            <h2>RSSI</h2>
+        </div>
+    </div>
+
+    
+
+    <div class="conection">
+        <h1>Información de la conexión:</h1>
+        <!-- a table -->
+        <table>
+            <tr>
+                <th>IP Local</th>
+                <th>Host Name</th>
+                <th>Status</th>
+                <th>SSID</th>
+                <th>PSK</th>
+                <th>BSSID</th>
+                <th>RSSI</th>
+            </tr>
+            <tr>
+                <th>%IPlocal%</th>
+                <th>%hostname%</th>
+                <th>%status%</th>
+                <th>%ssid%</th>
+                <th>%psk%</th>
+                <th>%bssid%</th>
+                <th>%rssi%</th>
+            </tr>
+        </table>
+    </div>
+
+    <div class="devlp">
+        <div class="elements">
+            <img src="https://avatars.githubusercontent.com/u/72824805?s=400&u=c684ab76bf2af54dc91a29d5ac15395fb86712a7&v=4" alt="Aper-UX" width="250">
+        </div>
+        <div class="dev">
+            <h1>Alex Quiroga Pérez</h1>
+            <h2>alex.quiroga.perez@gmail.com</h2>
+            <h2>73519892</h2>
+            <h1>Numb Music</h1>
+            <h4>© 2023, Numb Music, Todos los derechos reservados</h4>    
+        </div>
+    </div>
+
+    <script>
+        var chartADC = new Highcharts.Chart({
+        chart:{ renderTo:'chart-ADC' },
+        title: { text: 'ADC' },
+        series: [{
+            showInLegend: false,
+            data: []
+        }],
+        plotOptions: {
+            line: { animation: false,
+            dataLabels: { enabled: true }
+            },
+            series: { color: '#18009c' }
+        },
+        xAxis: {
+            type: 'datetime',
+            dateTimeLabelFormats: { second:'%S' }
+        },
+        yAxis: {
+            title: { text: 'Datos del ADC A0' }
+        },
+        credits: { enabled: false }
+        });
+        setInterval(function ( ) {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+            var x = (new Date()).getTime(),
+                y = parseFloat(this.responseText);
+            //console.log(this.responseText);
+            if(chartADC.series[0].data.length > 40) {
+                chartADC.series[0].addPoint([x, y], true, true, true);
+            } else {
+                chartADC.series[0].addPoint([x, y], true, false, true);
+            }
+            }
+        };
+        xhttp.open("GET", "/ADC", true);
+        xhttp.send();
+        }, 1000 );
+    </script>
+
+    <script src="script.js"></script>
+
 </body>
 </html>
