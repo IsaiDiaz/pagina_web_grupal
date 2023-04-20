@@ -1,6 +1,8 @@
 body{
-    background: linear-gradient(to bottom, #ccffe6 0%, #3366ff 100%);
+/*     background: linear-gradient(to bottom, #ffffff 0%, #ff4500 100%);
+ */    
     background-repeat: no-repeat;
+    background-color: #ff4500;
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
@@ -17,8 +19,7 @@ body{
   .info{
     display: flex;
     flex-direction: row;
-    width: 100%;
-    justify-content: space-around;
+    justify-content: space-between;
     margin-top: 2%;
     margin-bottom: 2%;
   }
@@ -35,19 +36,19 @@ body{
   }
   
   .elements{
-    padding: 2%;
+    width: 100%;
+    padding: 10px;
     text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #e6ffe6;
+    background-color: #ffffff;
     border-radius: 15px;
-    margin-top: 2%;
+    margin-top: 2px;
     margin-bottom: 2%;
-  
-    margin-left: 2%;
-    margin-right: 2%;
+    margin-left: 8px;
+    margin-right: 8px;
   }
   
   .conection{
@@ -57,7 +58,7 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #e6ffe6;
+    background-color: #ffffff;
     border-radius: 15px;
     font-size: 10px;
     margin-top: 2%;
@@ -78,7 +79,7 @@ body{
     flex-direction: column;
     justify-content: start;
     align-items: start;
-    background-color: #e6ffe6;
+    background-color: #ffffff;
     border-radius: 15px;
     font-size: 12px;
   }
@@ -129,7 +130,7 @@ body{
   * {
   
     scrollbar-width: auto;
-    scrollbar-color: #d6b3fb #8f54a000;
+    scrollbar-color: #fc6a31 #8f54a000;
   }
   
   /* Chrome, Edge, and Safari */
@@ -142,7 +143,7 @@ body{
   }
   
   *::-webkit-scrollbar-thumb {
-    background-color: #d6b3fb;
+    background-color: #fc6a31;
     border-radius: 10px;
     border: 3px solid #ffffff00;
   }
@@ -160,7 +161,7 @@ body{
   }
   
   .puls{
-    background-color: #e6ffe6;
+    background-color: #ffffff;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -201,7 +202,7 @@ body{
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    background-color: #e6ffe6;
+    background-color: #ffffff;
     border-radius: 15px;
     margin-top: 2%;
     margin-bottom: 2%;
@@ -251,7 +252,7 @@ body{
     height: 100%;
     margin: 0%;
     padding: 0%;
-    background-color: #e6ffe6;
+    background-color: #ffffff;
   }
   
   .contnav{
