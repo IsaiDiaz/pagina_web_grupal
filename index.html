@@ -14,7 +14,7 @@
 <body>
     <div class="navbar">
         <div class="contnav">
-            <img src="https://secrad.lpz.ucb.edu.bo/wp-content/uploads/2019/05/logo1-e1617112271575.png" alt="UCB-LOGO" width="400">
+            <img src="https://secrad.lpz.ucb.edu.bo/wp-content/uploads/2019/05/logo1-e1617112271575.png" alt="UCB-LOGO" width="275">
         </div>
     </div>
 
@@ -44,28 +44,31 @@
     </div>
     
 
-    <div class="conection">
-        <h1>Información de la conexión:</h1>
-        <!-- a table -->
-        <table>
-            <tr>
-                <th>IP Local</th>
-                <th>Host Name</th>
-                <th>Status</th>
-                <th>SSID</th>
-                <th>PSK</th>
-                <th>BSSID</th>
-                <th>RSSI</th>
-            </tr>
-            <tr>
-                <th>%IPlocal%</th>
-                <th>%hostname%</th>
-                <th>%status%</th>
-                <th>%ssid%</th>
-                <th>%psk%</th>
-                <th>%bssid%</th>
-                <th>%rssi%</th>
-            </tr>
+    <div class="tabla">
+        <h2>Información de la conexión:</h2>
+        <table class="tabla_filas">
+            <thead class="tabla_head">
+                <tr>
+                    <th>IP Local</th>
+                    <th>Host Name</th>
+                    <th>Status</th>
+                    <th>SSID</th>
+                    <th>PSK</th>
+                    <th>BSSID</th>
+                    <th>RSSI</th>
+                </tr>
+            </thead>
+            <tbody class="tabla_body">
+                <tr>
+                    <td>%IPlocal%</td>
+                    <td>%hostname%</td>
+                    <td>%status%</td>
+                    <td>%ssid%</td>
+                    <td>%psk%</td>
+                    <td>%bssid%</td>
+                    <td>%rssi%</td>
+                </tr>
+            </tbody>
         </table>
     </div>
 
