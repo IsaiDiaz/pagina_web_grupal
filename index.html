@@ -10,6 +10,7 @@
     <script src="http://cdn.rawgit.com/Mikhus/canvas-gauges/gh-pages/download/2.1.7/all/gauge.min.js"></script>
     <script src="https://code.highcharts.com/highcharts.js"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
     <div class="navbar">
@@ -42,7 +43,17 @@
             <h2>RSSI</h2>
         </div>
     </div>
-    
+
+    <div class="main">
+        <h1>Mandando Datos al ESP32 por Slider Rojo</h1>
+        <form action="/SliderV" method="post" class="buttons">
+            <h2>Slider:</h2>
+            <input type="range" id="pwmInputV" name="pwmValueV" min="0" max="1023" value="500" onchange="updateV(this.value);" >
+            <input type="number" id="textInputV" onchange="updateV(this.value);" value="500" style="width:50px 30px">
+            <label for="pwmInputV">PWM</label><br>
+            <button type="submit" value="Submit" class="boton">Enviar</button>
+        </form>
+    </div>
 
     <div class="tabla">
         <h2>Información de la conexión:</h2>
@@ -72,34 +83,71 @@
         </table>
     </div>
 
-    <div class="devlp">
-        <div class="">
-            <img src="https://avatars.githubusercontent.com/u/72824805?s=400&u=c684ab76bf2af54dc91a29d5ac15395fb86712a7&v=4" alt="Aper-UX" width="250">
+    <!-- tarjetas de presentacion developers -->
+    <div class="devs-cards">
+        <div class="profile-card">
+            <img src="https://avatars.githubusercontent.com/u/72824805?v=4" alt="profile image">
+            <div class="profile-card__description">
+                <h1>Alex Quiroga Pérez</h1>
+                <p>alex.quiroga.perez@gmail.com</p>
+                <p>73519892</p>
+                <p><b><i>NetSphere</i></b></p>
+                <p><b><i>Todos los derechos reservados</i></b></p>
+            </div>
+            <div class="profile-card__social">
+                <a href="https://www.github.com" class="fa fa-github" target="_blank">
+                </a>
+                <a href="https://www.facebook.com" class="fa fa-facebook" target="_blank">
+                </a>
+                <a href="https://www.whatsapp.com" class="fa fa-whatsapp" target="_blank">
+                </a>
+                <a href="https://www.instagram.com" class="fa fa-instagram" target="_blank">
+                </a>
+            </div>
         </div>
-        <div class="dev">
-            <h1>Alex Quiroga Pérez</h1>
-            <h2>alex.quiroga.perez@gmail.com</h2>
-            <h2>73519892</h2>
-            <h1>NetSphere</h1>
-            <h4>© 2023, NetSphere, Todos los derechos reservados</h4>    
+        <div class="profile-card">
+            <img src="https://avatars.githubusercontent.com/u/88806949?v=4" alt="profile image">
+            <div class="profile-card__description">
+                <h1>José Isaí Díaz Soza</h1>
+                <p>jsoza057@gmail.com</p>
+                <p>77555510</p>
+                <p><b><i>NetSphere</i></b></p>
+                <p><b><i>Todos los derechos reservados</i></b></p>
+            </div>
+            <div class="profile-card__social">
+                <a href="https://www.github.com" class="fa fa-github" target="_blank">
+                </a>
+                <a href="https://www.facebook.com" class="fa fa-facebook" target="_blank">
+                </a>
+                <a href="https://www.whatsapp.com" class="fa fa-whatsapp" target="_blank">
+                </a>
+                <a href="https://www.instagram.com" class="fa fa-instagram" target="_blank">
+                </a>
+            </div>
+        </div>
+        <div class="profile-card">
+            <img src="https://avatars.githubusercontent.com/u/90651243?v=4" alt="profile image">
+            <div class="profile-card__description">
+                <h1>Luis Mauricio Carvajal Sanchez</h1>
+                <p>luiscarvajalsanchez2@gmail.com</p>
+                <p>67030233</p>
+                <p><b><i>NetSphere</i></b></p>
+                <p><b><i>Todos los derechos reservados</i></b></p>
+            </div>
+            <div class="profile-card__social">
+                <a href="https://www.github.com" class="fa fa-github" target="_blank">
+                </a>
+                <a href="https://www.facebook.com" class="fa fa-facebook" target="_blank">
+                </a>
+                <a href="https://www.whatsapp.com" class="fa fa-whatsapp" target="_blank">
+                </a>
+                <a href="https://www.instagram.com" class="fa fa-instagram" target="_blank">
+                </a>
+            </div>
         </div>
     </div>
 
-    <div class="devlp">
-        <div class="">
-            <img src="https://avatars.githubusercontent.com/u/88806949?s=400&v=4" alt="IsaiDiaz" width="250">
-        </div>
-        <div class="dev">
-            <h1>José Isaí Díaz Soza</h1>
-            <h2>jsoza057@gmail.com</h2>
-            <h2>77555510</h2>
-            <h1>NetSphere</h1>
-            <h4>© 2023, NetSphere, Todos los derechos reservados</h4>    
-        </div>
-    </div>
-
-
-    <script>
+    <!-- <script>
         var chartADC = new Highcharts.Chart({
         chart:{ renderTo:'chart-ADC' },
         title: { text: 'ADC' },
@@ -139,7 +187,7 @@
         xhttp.open("GET", "/ADC", true);
         xhttp.send();
         }, 1000 );
-    </script>
+    </script> -->
 
     <script src="script.js"></script>
 

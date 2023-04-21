@@ -104,7 +104,7 @@ var gaugeTemp = new LinearGauge({
 }).draw();
   
 // Create Humidity Gauge
-var gaugeHum = new RadialGauge({
+/* var gaugeHum = new RadialGauge({
   renderTo: 'gauge-humidity',
   width: 300,
   height: 300,
@@ -146,7 +146,7 @@ var gaugeHum = new RadialGauge({
   needleCircleInner: false,
   animationDuration: 1500,
   animationRule: "linear"
-}).draw();
+}).draw(); */
 
 // Function to get current readings on the webpage when it loads for the first time
 function getReadings(){
@@ -165,7 +165,7 @@ function getReadings(){
   xhr.send();
 }
 
-if (!!window.EventSource) {
+/* if (!!window.EventSource) {
   var source = new EventSource('/events');
   
   source.addEventListener('open', function(e) {
@@ -189,4 +189,10 @@ if (!!window.EventSource) {
     gaugeTemp.value = myObj.temperature;
     gaugeHum.value = myObj.humidity;
   }, false);
+} */
+
+function updateV(val) {
+  console.log(val);
+  document.getElementById('pwmInputV').value = val ; 
+  document.getElementById('textInputV').value = val; 
 }
